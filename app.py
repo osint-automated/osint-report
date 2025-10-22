@@ -3,22 +3,22 @@ from pathlib import Path
 
 st.set_page_config(page_title="OSINT Report", page_icon="🌍", layout="wide")
 
-# Dark theme for Streamlit app itself
+# Streamlit default dark theme background
 st.markdown(
     """
     <style>
-    /* Dark background for Streamlit app */
+    /* Streamlit dark background */
     body, .css-18e3th9, .main {
-        background-color: #121212;
+        background-color: #0E1117;
         color: white;
     }
 
-    /* Force text colors */
+    /* Force all text to white */
     h1, h2, h3, h4, h5, h6, p, span, li, a {
         color: white !important;
     }
 
-    /* Optional: scrollbar styling */
+    /* Scrollbar styling (optional) */
     ::-webkit-scrollbar {
         width: 8px;
     }
@@ -37,9 +37,9 @@ if index_path.exists():
     with open(index_path, "r", encoding="utf-8") as f:
         html_content = f.read()
 
-    # Wrap HTML in a dark background container with white text
+    # Wrap HTML in a container with Streamlit dark background
     html_content_dark = f"""
-    <div style="background-color:#121212; color:white; padding:10px;">
+    <div style="background-color:#0E1117; color:white; padding:10px;">
         {html_content}
     </div>
     """
