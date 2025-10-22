@@ -3,7 +3,7 @@ from pathlib import Path
 
 st.set_page_config(page_title="OSINT Report", page_icon="🌍", layout="wide")
 
-# Streamlit dark theme + remove top padding/margins
+# Streamlit dark theme + minimal top spacing
 st.markdown(
     """
     <style>
@@ -18,14 +18,14 @@ st.markdown(
         color: white !important;
     }
 
-    /* Remove Streamlit top padding/margin */
+    /* Minimal top padding/margin */
     .css-18e3th9, .main, .block-container {
-        padding-top: 0rem;
+        padding-top: 0.5rem;  /* ~8px */
         padding-bottom: 0rem;
         margin-top: 0rem;
     }
 
-    /* Optional: remove extra margin below headers */
+    /* Remove extra margin between blocks */
     .block-container > * {
         margin-top: 0;
         margin-bottom: 0;
@@ -41,9 +41,9 @@ if index_path.exists():
     with open(index_path, "r", encoding="utf-8") as f:
         html_content = f.read()
 
-    # Embed HTML with no padding/margin
+    # Embed HTML with small top padding
     html_content_dark = f"""
-    <div style="background-color:#0E1117; color:white; padding:0; margin:0;">
+    <div style="background-color:#0E1117; color:white; padding-top:10px; padding-left:0; padding-right:0; margin:0;">
         {html_content}
     </div>
     """
