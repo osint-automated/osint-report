@@ -3,12 +3,12 @@ from pathlib import Path
 
 st.set_page_config(page_title="OSINT Report", page_icon="🌍", layout="wide")
 
-# Streamlit default dark theme background and remove padding
+# Streamlit dark theme + remove top padding/margins
 st.markdown(
     """
     <style>
-    /* Streamlit dark background */
-    body, .css-18e3th9, .main {
+    /* Dark background for Streamlit app */
+    body, .main, .block-container {
         background-color: #0E1117;
         color: white;
     }
@@ -18,22 +18,17 @@ st.markdown(
         color: white !important;
     }
 
-    /* Remove Streamlit default top padding/margin */
-    .css-18e3th9 {
+    /* Remove Streamlit top padding/margin */
+    .css-18e3th9, .main, .block-container {
         padding-top: 0rem;
         padding-bottom: 0rem;
-    }
-    .main {
-        padding-top: 0rem;
+        margin-top: 0rem;
     }
 
-    /* Optional: scrollbar styling */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: #555;
-        border-radius: 4px;
+    /* Optional: remove extra margin below headers */
+    .block-container > * {
+        margin-top: 0;
+        margin-bottom: 0;
     }
     </style>
     """,
@@ -46,7 +41,7 @@ if index_path.exists():
     with open(index_path, "r", encoding="utf-8") as f:
         html_content = f.read()
 
-    # Wrap HTML in a container with Streamlit dark background
+    # Embed HTML with no padding/margin
     html_content_dark = f"""
     <div style="background-color:#0E1117; color:white; padding:0; margin:0;">
         {html_content}
