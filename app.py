@@ -3,7 +3,7 @@ from pathlib import Path
 
 st.set_page_config(page_title="OSINT Report", page_icon="🌍", layout="wide")
 
-# Streamlit default dark theme background
+# Streamlit default dark theme background and remove padding
 st.markdown(
     """
     <style>
@@ -18,7 +18,16 @@ st.markdown(
         color: white !important;
     }
 
-    /* Scrollbar styling (optional) */
+    /* Remove Streamlit default top padding/margin */
+    .css-18e3th9 {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+    .main {
+        padding-top: 0rem;
+    }
+
+    /* Optional: scrollbar styling */
     ::-webkit-scrollbar {
         width: 8px;
     }
@@ -39,7 +48,7 @@ if index_path.exists():
 
     # Wrap HTML in a container with Streamlit dark background
     html_content_dark = f"""
-    <div style="background-color:#0E1117; color:white; padding:10px;">
+    <div style="background-color:#0E1117; color:white; padding:0; margin:0;">
         {html_content}
     </div>
     """
