@@ -1,0 +1,1 @@
+This workflow involves retrieving data from NewsAPI, feeding that data to the OpenAI LLM, and using the LLM to summarize the text for each search term into summary paragraphs. The output is formatted into an html document to be hosted by Streamlit. You can visit the website here: https://osint-report.streamlit.app
