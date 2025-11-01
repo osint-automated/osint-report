@@ -1,1 +1,3 @@
 The intent of this report is to provide a high-level overview of significant military and geopolitical developments during the reporting period. The report consists of open-source reporting and updates on evolving conflicts, diplomatic initiatives, and strategic military actions involving Venezuela, Russia, Ukraine, China, Israel, Iran, and North Korea.
+
+View the report here: https://osint-report.streamlit.app/
